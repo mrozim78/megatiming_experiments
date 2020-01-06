@@ -1,2 +1,2 @@
-# megatiming_experiments
+# Megatiming Crawl Experiments
 Experiments to crawl data from megatiming.pl
