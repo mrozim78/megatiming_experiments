@@ -45,6 +45,7 @@ db.results.aggregate(
                 "athlete_nation":"$club.ATHLETES.ATHLETE.@nation",
                 "athlete_licence":"$club.ATHLETES.ATHLETE.@license",
                 "athlete_swrid":"$club.ATHLETES.ATHLETE.@swrid",
+                "athlete_gender":"$club.ATHLETES.ATHLETE.@gender",
                 "athlete":"$club.ATHLETES.ATHLETE"
             }    
         },
@@ -68,13 +69,14 @@ db.results.aggregate(
                 "athlete_nation":"$athlete_nation",
                 "athlete_licence":"$athlete_licence",
                 "athlete_swrid":"$athlete_swrid",
+                "athlete_gender":"$athlete_gender",
                 "eventid":"$athlete.RESULTS.RESULT.@eventid",
                 "points":"$athlete.RESULTS.RESULT.@points",
                 "resultid":"$athlete.RESULTS.RESULT.@resultid",
                 "swimtime":"$athlete.RESULTS.RESULT.@swimtime",
             }
         },
-        {
+       {
             $out:"result_athlete"
         }
         
