@@ -31,6 +31,7 @@ db.results.aggregate(
                 "uuid":"$uuid",
                 "distance":"$session.EVENTS.EVENT.SWIMSTYLE.@distance",
                 "stroke":"$session.EVENTS.EVENT.SWIMSTYLE.@stroke",
+                "technique":{ $ifNull: [ "$session.EVENTS.EVENT.SWIMSTYLE.@technique","NORMAL"]},
                 "eventid":"$session.EVENTS.EVENT.@eventid"
                 "event":"$session.EVENTS.EVENT"
             }
@@ -45,6 +46,7 @@ db.results.aggregate(
                 "uuid":"$uuid",
                 "distance":"$distance",
                 "stroke":"$stroke",
+                "technique":"$technique",
                 "eventid":"$eventid"
                 "agemin":"$event.AGEGROUPS.AGEGROUP.@agemin",
                 "agemax":"$event.AGEGROUPS.AGEGROUP.@agemax",
@@ -61,6 +63,7 @@ db.results.aggregate(
                 "uuid":"$uuid",
                 "distance":"$distance",
                 "stroke":"$stroke",
+                "technique":"$technique",
                 "eventid":"$eventid",
                 "agemin":"$agemin",
                 "agemax":"$agemax",
